@@ -100,17 +100,18 @@ Name email@example.com
 Log the result of your new array. */
 const contactInfo = [];
 for (let i = 0; i < graduates.length; i++) {
-  contactInfo.push(graduates[i].first_name, graduates[i].email)
+  contactInfo.push(`${graduates[i].first_name} ${graduates[i].email}`);
 }
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
-// const uni = [];
-// for (let i = 0; i < graduates.length; i++) {
-// if (graduates[i].university.includes('Uni'),
-//   uni.push(graduates[i])};
-// console.log(uni);
+const uni = [];
+for (let i = 0; i < graduates.length; i++) {
+if (graduates[i].university.includes('Uni'),
+  uni.push(graduates[i]));
+}
+console.log(uni);
 
 
 // ==== ADVANCED Array Methods ====
@@ -135,16 +136,11 @@ The zoo wants to display both the scientific name and the animal name in front o
 scientific names in it.  The individual values in the array should look like this "Name: Jackal, asiatic, Scientific: Canis aureus."
 
 */
-// const animalNames = [];
-// // for (let i = 0; i < zooAnimals.length; i++) {
-// //   animalNames.push(zooAnimals[i].animal_name)
-// // }
-// let animalNamesss = zooAnimals.forEach(function(i){
-//   animalNames.push(zooAnimals[i].animal_name);
-// });
-
-
-// console.log(animalNames);
+const animalNames = [];
+let animalNamesss = zooAnimals.forEach((i) => {
+  return animalNames.push(`${i.animal_name} ${i.scientific_name}`) ;
+});
+ console.log(animalNames);
 
 /* Request 2: .map()    
 
@@ -165,7 +161,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 const largerPopulation = [];
-  let pop = zooAnimals.filer((populationTotal) => {
+  let pop = zooAnimals.filter((populationTotal) => {
     return populationTotal < 6;
   })
 console.log(largerPopulation);
